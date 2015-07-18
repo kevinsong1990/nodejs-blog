@@ -19,5 +19,5 @@ If you encounter any bugs with the library please file an issue in the Issues se
 # My Contact Info
 * Phone: +86 15051839628
 * Email: songkailun@foxmail.com
-* Blog: www.cnblogs.com/KevinSong/
-* Linkin: https://cn.linkedin.com/in/songkailun
+* Blog : www.cnblogs.com/KevinSong/
+* Linkedin: https://cn.linkedin.com/in/songkailun
