@@ -14,7 +14,7 @@ In frontend, I used this beautiful template https://github.com/IronSummitMedia/s
 
 ## Getting Started
 To use this project, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
+* Download the latest release
 * Fork this repository on GitHub
 
 # Contribute Code or Provide Feedback
