@@ -4,10 +4,9 @@ var path    = require('path');
 var config  = require('./config.json');
 
 
-var app = express();
+var app = module.exports = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // get port
 var port = config.port;
