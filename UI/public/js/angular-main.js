@@ -8,8 +8,22 @@ myApp.config(['$routeProvider',
         when(
                 '/',
 			    {
-				    templateUrl: 'index.html',
+				    templateUrl: '/_pages/index/index.html',
 				    controller: 'indexContrl'
+			    }
+	    ).
+        when(
+                '/about.html',
+			    {
+				    templateUrl: '/_pages/about/index.html',
+				    controller: ''
+			    }
+	    ).
+        when(
+                '/post.html',
+			    {
+				    templateUrl: '/_pages/article/index.html',
+				    controller: ''
 			    }
 	    ).
 		otherwise( {
