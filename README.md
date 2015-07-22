@@ -12,6 +12,9 @@ The database I want to choose Mangodb, because I really want to learn it in the 
 # Html
 In frontend, I used this beautiful template https://github.com/IronSummitMedia/startbootstrap-clean-blog.  Becasue I'm not good at html, thanks very much.
 
+# Markdown Support
+For the article in this blog, I will consider to add markdown edditor to write beautiful article
+
 # Contribute Code or Provide Feedback
 If you encounter any bugs with the library please file an issue in the Issues section of the project. Thanks very much.
 
