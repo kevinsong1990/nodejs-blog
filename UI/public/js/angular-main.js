@@ -31,3 +31,6 @@ myApp.config(['$routeProvider',
 		});
 	}
 ]);
+
+// controller
+var myControllers = angular.module('myControllers', []); 
