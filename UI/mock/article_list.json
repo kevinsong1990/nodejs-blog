@@ -1,0 +1,19 @@
+{
+    "result": "success",
+    "data": [
+        {
+            "article_id"     : "1",
+            "article_title"  : "Man must explore, and this is exploration at its greatest",
+            "article_author" : "Kevin Song",
+            "article_time"   : "2014-08-15T23:49:45.913Z",
+            "article_comment_number": 0
+        },
+        {
+            "article_id"     : "2",
+            "article_title"  : "Problems look mighty small from 150 miles up",
+            "article_author" : "Kevin Song",
+            "article_time"   : "2014-09-25T13:19:25.913Z",
+            "article_comment_number": 0
+        }
+    ]
+}
