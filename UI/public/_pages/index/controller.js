@@ -6,17 +6,21 @@ myControllers.controller('indexContrl', ['$scope', 'RestServer', function ($scop
             "/get_article_list",
             function (response) {
                 // success
-                console.log(response);
+                console.log(response.data);
+
+                var list = response.data;
+                for (var i=0; i<list.length; i++) {
+                    console.log(list[i].article_title);
+                }
             },
-            function (response) {
+            function (err) {
                 // failed
-                console.log("Error when get article list.");
+                console.log("Error when get article list. Error: " + err);
                 $scope.errorMessage = err;
             }
         );
     };
 
     // main
-    console.log("get article list");
     get_article_list();
 }]);
