@@ -4,3 +4,10 @@ myApp.filter('formatDate', function() {
         return moment(input).format('LL');
     };
 });
+
+myApp.filter('toHtml', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+});
+

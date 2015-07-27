@@ -20,10 +20,10 @@ myApp.config(['$routeProvider',
 			    }
 	    ).
         when(
-                '/post.html',
+                '/article.html/:id',
 			    {
 				    templateUrl: '_pages/article/index.html',
-				    controller: ''
+				    controller: 'articleContrl'
 			    }
 	    ).
 		otherwise( {
