@@ -55,15 +55,6 @@ myControllers.controller('indexContrl', ['$scope', 'RestServer', function ($scop
 
                     var list = response.data.article_list;
                     for (var i=0; i<list.length; i++) {
-                        //console.log(list[i].article_title);
-                    
-                        // change the data format
-                        var time = list[i].article_time;
-                        time = moment(time).format('LL');
-                        //console.log("time: " + time);
-                    
-                        list[i].article_time = time;
-
                         // push the data into array
                         $scope.article_list.push(list[i]);
                     }
