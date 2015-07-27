@@ -73,7 +73,10 @@
 					</div>
 					<!-- Pager -->
 					<ul class="pager">
-						<li class="next">
+                        <li class="previous" ng-show="show_before" ng-click="showBefore()">
+							<a href="#/">返回上一页&rarr;</a>
+						</li>
+						<li class="next" ng-show="show_next" ng-click="showNext()">
 							<a href="#/">更早的随笔&rarr;</a>
 						</li>
 					</ul>
