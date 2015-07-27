@@ -23,12 +23,21 @@ if (process.argv && process.argv[2]) {
 }
 console.log("mode: " + mode);
 
+// read the mock data
 if (mode === "development") {
     // read the mock data
     var mockArticleListData    = require('./mock/article_list');
+    var mockArticleListData2   = require('./mock/article_list_previous');
     var mockArticleData        = require('./mock/article_data');
     var mockArticleCommentData = require('./mock/article_comment');
 }
+
+// when handle request fail, return this json to frontend
+var failResponse = {
+    "result": "fail",
+    "error": ""
+};
+
 
 // express app config here
 var app = module.exports = express();
@@ -40,16 +49,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 // create application/json parser, this will parse the json form data from the req
 var jsonParser = bodyParser.json();
 
+
 // API: get_article_list
 app.post('/get_article_list', jsonParser, function(req, res) {
     res.writeHeader(200, {"Content-Type": "text/html"});
     
+    // get the form data
+    var begin = req.body.article_begin;
+    var end   = req.body.article_end;
+    
     //return the mock data
     if (mode === "development") {
-        res.write(JSON.stringify(mockArticleListData));
- 
-        // print the form data
-        console.log(req.body.article_begin);
+        // return the data according to the num
+        if (begin === 0 && end === 5) {
+            res.write(JSON.stringify(mockArticleListData));
+        }
+        else if (begin === 5 && end === 10) {
+            res.write(JSON.stringify(mockArticleListData2));
+        }
+        else {
+            console.log("Error: we don't have these data");
+            failResponse.error = "we don't have these data, begin: " + begin + ", end: " + end;
+            res.write(failResponse);
+        }
     }
     else {
         //...

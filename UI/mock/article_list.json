@@ -1,19 +1,43 @@
 {
     "result": "success",
-    "data": [
-        {
-            "article_id"     : "1",
-            "article_title"  : "Man must explore, and this is exploration at its greatest",
-            "article_author" : "Kevin Song",
-            "article_time"   : "2014-08-15T23:49:45.913Z",
-            "article_comment_number": 0
-        },
-        {
-            "article_id"     : "2",
-            "article_title"  : "Problems look mighty small from 150 miles up",
-            "article_author" : "Kevin Song",
-            "article_time"   : "2014-09-25T13:19:25.913Z",
-            "article_comment_number": 0
-        }
-    ]
+    "data": {
+        "total_aritcle_num": 7,
+        "article_list": [
+            {
+				"article_id"     : "1",
+				"article_title"  : "Man must explore, and this is exploration at its greatest",
+				"article_author" : "Kevin Song",
+				"article_time"   : "2015-07-15T23:49:45.913Z",
+				"article_comment_number": 0
+			},
+			{
+				"article_id"     : "2",
+				"article_title"  : "Problems look mighty small from 150 miles up",
+				"article_author" : "Kevin Song",
+				"article_time"   : "2015-06-25T13:19:25.913Z",
+				"article_comment_number": 0
+			},
+			{
+				"article_id"     : "3",
+				"article_title"  : "Hello — Caller ID & Blocking - Android Apps on Google Play",
+				"article_author" : "Kevin Song",
+				"article_time"   : "2015-05-12T15:19:25.913Z",
+				"article_comment_number": 0
+			},
+			{
+				"article_id"     : "4",
+				"article_title"  : "HELLO! | Facebook",
+				"article_author" : "Kevin Song",
+				"article_time"   : "2015-03-25T13:19:25.913Z",
+				"article_comment_number": 0
+			},
+			{
+				"article_id"     : "5",
+				"article_title"  : "Best Language Learning apps for iPad",
+				"article_author" : "Kevin Song",
+				"article_time"   : "2015-01-08T13:19:25.913Z",
+				"article_comment_number": 0
+			}
+        ]
+    }
 }
