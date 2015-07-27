@@ -1,8 +1,19 @@
 var express = require('express');
 var http    = require('http');
 var path    = require('path');
-var favicon = require('serve-favicon');
 var config  = require('./config.json');
+var favicon = require('serve-favicon');
+var bodyParser = require('body-parser');
+
+/*
+ *  Project Name: Kevin's Personal Website
+ *  Author: Kevin Song
+ *  Date  : 2015/7/27
+ *  Reference: 
+ *      1. How to use bodyparser? https://github.com/expressjs/body-parser
+ *      2. ...
+ */
+
 
 // program mode, default set as development
 var mode = "development";
@@ -22,15 +33,23 @@ if (mode === "development") {
 // express app config here
 var app = module.exports = express();
 
+// express middle ware
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/get_article_list', function(req, res) {
+// create application/json parser, this will parse the json form data from the req
+var jsonParser = bodyParser.json();
+
+// API: get_article_list
+app.post('/get_article_list', jsonParser, function(req, res) {
     res.writeHeader(200, {"Content-Type": "text/html"});
     
     //return the mock data
     if (mode === "development") {
         res.write(JSON.stringify(mockArticleListData));
+ 
+        // print the form data
+        console.log(req.body.article_begin);
     }
     else {
         //...

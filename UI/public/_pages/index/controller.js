@@ -2,11 +2,19 @@
 myControllers.controller('indexContrl', ['$scope', 'RestServer', function ($scope, RestServer) {
     // data
     $scope.article_list = [];
+    // default show 5 articles per page
+    $scope.article_num_per_page = 5;
+    // current article list
+    $scope.current_article_num  = 0;
         
     // get article list from server
-    var get_article_list = function () {
-        RestServer.get(
+    var get_article_list = function (current_article_num, article_num_per_page) {
+        RestServer.post(
             "/get_article_list",
+            {
+                article_begin: current_article_num,
+                article_end: current_article_num + article_num_per_page
+            },
             function (response) {
                 // success
                 //console.log(response.data);
@@ -35,7 +43,7 @@ myControllers.controller('indexContrl', ['$scope', 'RestServer', function ($scop
             }
         );
     };
-
+    
     // main
-    get_article_list();
+    get_article_list($scope.current_article_num, $scope.article_num_per_page);
 }]);
