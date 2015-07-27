@@ -1,6 +1,7 @@
 var express = require('express');
 var http    = require('http');
 var path    = require('path');
+var favicon = require('serve-favicon');
 var config  = require('./config.json');
 
 // program mode, default set as development
@@ -21,6 +22,7 @@ if (mode === "development") {
 // express app config here
 var app = module.exports = express();
 
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/get_article_list', function(req, res) {
