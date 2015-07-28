@@ -13,6 +13,13 @@ myApp.config(['$routeProvider',
 			    }
 	    ).
         when(
+                '/board.html',
+			    {
+				    templateUrl: '_pages/board/index.html',
+				    controller: ''
+			    }
+	    ).
+        when(
                 '/about.html',
 			    {
 				    templateUrl: '_pages/about/index.html',
