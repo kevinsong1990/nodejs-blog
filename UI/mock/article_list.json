@@ -8,6 +8,7 @@
 				"article_title"  : "Man must explore, and this is exploration at its greatest",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2015-07-15T23:49:45.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			},
 			{
@@ -15,6 +16,7 @@
 				"article_title"  : "Problems look mighty small from 150 miles up",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2015-06-25T13:19:25.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			},
 			{
@@ -22,6 +24,7 @@
 				"article_title"  : "Hello — Caller ID & Blocking - Android Apps on Google Play",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2015-05-12T15:19:25.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			},
 			{
@@ -29,6 +32,7 @@
 				"article_title"  : "HELLO! | Facebook",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2015-03-25T13:19:25.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			},
 			{
@@ -36,6 +40,7 @@
 				"article_title"  : "Best Language Learning apps for iPad",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2015-01-08T13:19:25.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			}
         ]

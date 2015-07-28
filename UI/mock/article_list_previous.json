@@ -8,6 +8,7 @@
 				"article_title"  : "Kevin - Wikipedia, the free encyclopedia",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2014-11-15T23:49:45.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			},
 			{
@@ -15,6 +16,7 @@
 				"article_title"  : "你们身边有没有很多英文名叫Kevin的？",
 				"article_author" : "Kevin Song",
 				"article_time"   : "2014-09-30T13:19:25.913Z",
+                "article_read_number"   : 0,
 				"article_comment_number": 0
 			}
 		]
