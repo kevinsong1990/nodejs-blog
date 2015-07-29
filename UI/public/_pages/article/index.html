@@ -1,49 +1,34 @@
-<!DOCTYPE html>
-<html ng-app>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
+<!-- Navigation -->
+<div menu></div>
 
-		<title>宋凯伦的个人网站 - Kevin Song's Personal Website</title>
-	</head>
-
-	<body ng-view>
-		<!-- Navigation -->
-		<div menu></div>
-
-		<!-- Page Header -->
-		<!-- Set your background image for this header on the line below. -->
-		<header class="intro-header" style="background-image: url('{{ article_data.article_title_pic }}')">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-						<div class="post-heading">
-                            <h1>{{ article_data.article_title }}</h1>
-                            <!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>-->
-							<span class="meta">Posted by <a href="#">{{ article_data.article_author }}</a> on {{ article_data.article_time | formatDate}}</span>
-						</div>
-					</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('{{ article_data.article_title_pic }}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="post-heading">
+					<h1>{{ article_data.article_title }}</h1>
+					<!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>-->
+					<span class="meta">Posted by <a href="#">{{ article_data.article_author }}</a> on {{ article_data.article_time | formatDate}}</span>
 				</div>
 			</div>
-		</header>
+		</div>
+	</div>
+</header>
 
-		<!-- Post Content -->
-		<article>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-bind-html="article_data.article_content | toHtml">
+<!-- Post Content -->
+<article>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-bind-html="article_data.article_content | toHtml">
 
-					</div>
-				</div>
 			</div>
-		</article>
+		</div>
+	</div>
+</article>
 
-		<hr>
+<hr>
 
-		<!-- Footer -->
-		<div footer></div>
-	</body>
-</html>
+<!-- Footer -->
+<div footer></div>
