@@ -24,8 +24,18 @@
 <article>
 	<div class="container">
 		<div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-bind-html="article_data.article_content | toHtml">
-            
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- article content -->
+                <div ng-bind-html="article_data.article_content | toHtml"></div>
+                
+                <br />
+                <br />
+                <br />
+                
+				<!-- This is duoshuo comment plugin below -->
+				<div id="comment-box"></div> 
+                <!-- 动态加载多说评论框 dynamic load the duoshuo comment plugin -->
+                <div comment></div>
 			</div>
 		</div>
 	</div>

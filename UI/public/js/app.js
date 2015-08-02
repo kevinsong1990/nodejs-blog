@@ -2,8 +2,11 @@
 var myApp = angular.module('myApp', [ 'ngRoute', 'myControllers']);
 
 // route
-myApp.config(['$routeProvider',
-	function($routeProvider) {
+myApp.config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider) {
+        // add prefix
+        //$locationProvider.hashPrefix('!');
+
 		$routeProvider.
         when(
                 '/',
