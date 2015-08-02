@@ -13,7 +13,7 @@ The database I want to choose Mangodb, because I really want to learn it in the 
 In frontend, I used this beautiful template https://github.com/IronSummitMedia/startbootstrap-clean-blog.  Becasue I'm not good at html, thanks very much.
 
 # Use 3rd party Comment Plugin
-I will use 3rd party comment plugin to reduce my work. Maybe famous "Disqus" or Chinese's famous "UYan" module.
+I will use 3rd party comment plugin to reduce my work. The plugin I choose is DuoSuo - a famous chinese comment plugin.
 
 # Contribute Code or Provide Feedback
 If you encounter any bugs with the library please file an issue in the Issues section of the project. Thanks very much.
