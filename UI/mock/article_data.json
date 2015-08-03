@@ -6,6 +6,7 @@
         "article_title_pic" : "img/article_1_title.jpg",
         "article_author"    : "Kevin Song",
         "article_time"      : "2014-08-15T23:49:45.913Z",
+        "article_read_number"   : 0,
         "article_comment_number": 0,
         "article_content": ""
     }
