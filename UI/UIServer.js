@@ -1,10 +1,12 @@
 var express = require('express');
-var http    = require('http');
-var path    = require('path');
-var fs      = require('fs');
-var config  = require('./config.json');
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+var config = require('./config.json');
+var article = require('./mongodb.js');
+
 
 /*
  *  Project Name: Kevin's Personal Website
@@ -40,7 +42,6 @@ var failResponse = {
     "result": "fail",
     "error": ""
 };
-
 
 // express app config here
 var app = module.exports = express();
