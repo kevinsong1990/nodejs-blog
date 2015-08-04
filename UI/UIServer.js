@@ -30,7 +30,6 @@ if (mode === "development") {
     var mockArticleListData    = require('./mock/article_list');
     var mockArticleListData2   = require('./mock/article_list_previous');
     var mockArticleData        = require('./mock/article_data');
-    var mockArticleCommentData = require('./mock/article_comment');
     
     var mockArticleDataContent = fs.readFileSync('./mock/article_data_content.html', 'utf-8');
     mockArticleData.data.article_content = mockArticleDataContent;
