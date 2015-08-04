@@ -4,7 +4,7 @@ var fs = require('fs');
 var Schema = mongoose.Schema;
 // define the blog schema
 var articleSchema = new Schema({
-    "_id"                   : Number,   //article_id
+    "_id"                   : Number,   //_id
     "article_title"         : String,
     "article_title_pic"     : String,
     "article_author"        : String,

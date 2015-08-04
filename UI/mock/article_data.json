@@ -1,7 +1,7 @@
 {
     "result": "success",
     "data": {
-        "article_id"        : 1,
+        "_id"        : 1,
         "article_title"     : "Man must explore, and this is exploration at its greatest",
         "article_title_pic" : "img/article_1_title.jpg",
         "article_author"    : "Kevin Song",

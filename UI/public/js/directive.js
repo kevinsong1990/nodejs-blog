@@ -22,12 +22,12 @@ myApp.directive("comment", function() {
     return {
         restrict: 'A',
         link: function(scope){
-            var article_id = scope.article_id;
+            var _id = scope._id;
             var data_thread_key = '';
             var data_url = '';
             var data_author_key = '';
             
-            if (!article_id || article_id === '') {
+            if (!_id || _id === '') {
                 console.log("This is board page.");
                 // get the variable from controller
                 data_thread_key = 'board';
@@ -35,11 +35,11 @@ myApp.directive("comment", function() {
                 data_author_key = 'http://blogtest.com/#!/board.html';
             }
             else {
-                console.log("This is article page. article_id: " + article_id);
+                console.log("This is article page. _id: " + _id);
                 // get the variable from controller
-                data_thread_key = 'article_' + article_id;
-                data_url = 'article_' + article_id;
-                data_author_key = 'http://blogtest.com/#!/article.html/' + article_id;
+                data_thread_key = 'article_' + _id;
+                data_url = 'article_' + _id;
+                data_author_key = 'http://blogtest.com/#!/article.html/' + _id;
             }
             
             // dynamic load the duoshuo comment box

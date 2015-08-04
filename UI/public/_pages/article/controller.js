@@ -4,15 +4,15 @@ myControllers.controller('articleContrl', ['$scope', 'RestServer', '$routeParams
     $scope.article_data = {};
 
     // article id
-    $scope.article_id = $routeParams.id;
-    //console.log("$scope.article_id: " + $scope.article_id);
+    $scope._id = $routeParams.id;
+    //console.log("$scope._id: " + $scope._id);
 
     // get article data from server
-    var get_article = function (article_id) {
+    var get_article = function (_id) {
         RestServer.post(
             "/get_article",
             {
-                "article_id": article_id
+                "_id": _id
             },
             function (response) {
                 if (response.result === "success") {
@@ -33,5 +33,5 @@ myControllers.controller('articleContrl', ['$scope', 'RestServer', '$routeParams
     };
     
     // main
-    get_article($scope.article_id);
+    get_article($scope._id);
 }]);

@@ -26,6 +26,18 @@ if (process.argv && process.argv[2]) {
 }
 console.log("mode: " + mode);
 
+
+// express app config here
+var app = module.exports = express();
+
+// express middle ware
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// create application/json parser, this will parse the json form data from the req
+var jsonParser = bodyParser.json();
+
+
 // read the mock data
 if (mode === "development") {
     // read the mock data
@@ -37,21 +49,16 @@ if (mode === "development") {
     mockArticleData.data.article_content = mockArticleDataContent;
 }
 
-// when handle request fail, return this json to frontend
+// http response data
+var successResponse = {
+    "result": "success",
+    "data": {}
+};
+
 var failResponse = {
     "result": "fail",
     "error": ""
 };
-
-// express app config here
-var app = module.exports = express();
-
-// express middle ware
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(express.static(path.join(__dirname, 'public')));
-
-// create application/json parser, this will parse the json form data from the req
-var jsonParser = bodyParser.json();
 
 
 // API: get_article_list
@@ -88,11 +95,11 @@ app.post('/get_article', jsonParser, function(req, res) {
     res.writeHeader(200, {"Content-Type": "text/html"});
     
     // get the article id
-    var id = req.body.article_id;
+    var id = req.body._id;
     //console.log("id: " + id);
     
     //return the mock mock
-    if (mode === "development") {
+    /*if (mode === "development") {
         // return the data according to the num
         if (id == 1) {
             res.write(JSON.stringify(mockArticleData));
@@ -101,12 +108,24 @@ app.post('/get_article', jsonParser, function(req, res) {
             failResponse.error = "we don't have this article, id: " + id;
             res.write(JSON.stringify(failResponse));
         }
+        res.end();
     }
-    else {
-        //...
-    }
-    
-    res.end();
+    else {*/
+        // query data from mongodb
+        article.findById(id, function(err, data) {
+            if (err) {
+                console.log("Database Error: get data from collection. Error: " + err);
+                failResponse.error = err;
+                res.write(JSON.stringify(failResponse));
+            }
+            else {
+                console.log("Database: get data success. Article title: " + data.article_title);
+                successResponse.data = data;
+                res.write(JSON.stringify(successResponse));
+            }
+            res.end();
+        });
+    //}
 });
 
 
