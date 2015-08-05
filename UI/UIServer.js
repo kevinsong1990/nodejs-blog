@@ -5,7 +5,7 @@ var fs = require('fs');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var config = require('./config.json');
-var article = require('./mongodb.js');
+var db = require('./model/db.js');
 
 
 /*
@@ -112,7 +112,7 @@ app.post('/get_article', jsonParser, function(req, res) {
     }
     else {*/
         // query data from mongodb
-        article.findById(id, function(err, data) {
+        db.findById(id, function(err, data) {
             if (err) {
                 console.log("Database Error: get data from collection. Error: " + err);
                 failResponse.error = err;
