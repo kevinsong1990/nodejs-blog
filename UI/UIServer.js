@@ -18,8 +18,8 @@ var db = require('./model/db.js');
  */
 
 
-// program mode, default set as development
-var mode = "development";
+// program mode, default set as production
+var mode = "production";
 if (process.argv && process.argv[2]) {
     // production to be passed as param
     mode = process.argv[2];
@@ -84,10 +84,22 @@ app.post('/get_article_list', jsonParser, function(req, res) {
         }
     }
     else {
-        //...
+        // query data from mongodb
+        db.find({}, function(err, data) {
+            if (err) {
+                console.log("Database Error: get data from collection. Error: " + err);
+                failResponse.error = err;
+                res.write(JSON.stringify(failResponse));
+            }
+            else {
+                console.log("Database: get data success. data: " + data);
+                successResponse.data.total_aritcle_num = data.length;
+                successResponse.data.article_list = data;
+                res.write(JSON.stringify(successResponse));
+            }
+            res.end();
+        }).select(db.show_fields);
     }
-
-    res.end();
 });
 
 // API: get_article
@@ -99,7 +111,7 @@ app.post('/get_article', jsonParser, function(req, res) {
     //console.log("id: " + id);
     
     //return the mock mock
-    /*if (mode === "development") {
+    if (mode === "development") {
         // return the data according to the num
         if (id == 1) {
             res.write(JSON.stringify(mockArticleData));
@@ -110,7 +122,7 @@ app.post('/get_article', jsonParser, function(req, res) {
         }
         res.end();
     }
-    else {*/
+    else {
         // query data from mongodb
         db.findById(id, function(err, data) {
             if (err) {
@@ -125,7 +137,7 @@ app.post('/get_article', jsonParser, function(req, res) {
             }
             res.end();
         });
-    //}
+    }
 });
 
 

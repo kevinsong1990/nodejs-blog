@@ -60,6 +60,17 @@ var article = {
     "article_content"       : String
 };
 
+// only query these fields when get_article_list
+var show_fields = {
+    "_id"                   : 1,
+    "article_title"         : 1,
+    "article_title_pic"     : 1,
+    "article_author"        : 1,
+    "article_time"          : 1,
+    "article_read_number"   : 1,
+    "article_comment_number": 1
+};
+
 // create schema
 var articleSchema = new schema(article);
 
@@ -68,3 +79,4 @@ var articleModel = mongoose.model('article', articleSchema);
 
 // make this available to our users in our Node applications
 module.exports = articleModel;
+module.exports.show_fields = show_fields;

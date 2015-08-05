@@ -36,12 +36,22 @@ mongoose.connection.on('disconnected', function() {
 // create model
 var articleModel = mongoose.model('article', articleSchema);
 
+var show_fields = {
+    "_id"                   : 1,
+    "article_title"         : 1,
+    "article_title_pic"     : 1,
+    "article_author"        : 1,
+    "article_time"          : 1,
+    "article_read_number"   : 1,
+    "article_comment_number": 1
+};
+
 // read data from db
-articleModel.findById(2, function(err, data) {
+articleModel.find({}, function(err, data) {
     if (err) {
         console.log("Database Error: get data from collection. Error: " + err);
     }
     else {
-        console.log("Database: get data success. Article title: " + data.article_title);
+        console.log("Database: get data success. data: " + data);
     }
-});
+}).select(show_fields);
