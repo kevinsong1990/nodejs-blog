@@ -66,16 +66,18 @@ app.post('/get_article_list', jsonParser, function(req, res) {
     res.writeHeader(200, {"Content-Type": "text/html"});
     
     // get the form data
-    var begin = req.body.article_begin;
-    var end   = req.body.article_end;
+    var currentPage = req.body.current_page;
+    var articleNumPerPage = req.body.article_num_per_page;
     
+    console.log("currentPage: " + currentPage + ", articleNumPerPage: " + articleNumPerPage);
+
     //return the mock mock
     if (mode === "development") {
         // return the data according to the num
-        if (begin === 0 && end === 5) {
+        if (currentPage === 0) {
             res.write(JSON.stringify(mockArticleListData));
         }
-        else if (begin === 5 && end === 10) {
+        else if (currentPage === 1) {
             res.write(JSON.stringify(mockArticleListData2));
         }
         else {
@@ -90,15 +92,32 @@ app.post('/get_article_list', jsonParser, function(req, res) {
                 console.log("Database Error: get data from collection. Error: " + err);
                 failResponse.error = err;
                 res.write(JSON.stringify(failResponse));
+                res.end();
             }
             else {
-                console.log("Database: get data success. data: " + data);
-                successResponse.data.total_aritcle_num = data.length;
-                successResponse.data.article_list = data;
-                res.write(JSON.stringify(successResponse));
+                console.log("Database: get data success. data.length: " + data.length);
+
+                // get the number of the all articles
+                db.count(function(err, count) {
+                    if (err) {
+                        console.log("Database Error: count articles number. Error: " + err);
+                        failResponse.error = err;
+                        res.write(JSON.stringify(failResponse));
+                    }
+                    else {
+                        console.log("articles total number: " + count);
+                    
+                        successResponse.data = {};
+                        successResponse.data.total_aritcle_num = count;
+                        successResponse.data.article_list = data;
+                        
+                        // return response
+                        res.write(JSON.stringify(successResponse));
+                    }
+                    res.end();
+                });
             }
-            res.end();
-        }).select(db.show_fields);
+        }).select(db.show_fields).skip((currentPage-1) * articleNumPerPage).limit(articleNumPerPage);
     }
 });
 

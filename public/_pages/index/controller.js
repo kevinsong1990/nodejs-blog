@@ -39,8 +39,8 @@ myControllers.controller('indexContrl', ['$scope', 'RestServer', function ($scop
         RestServer.post(
             "/get_article_list",
             {
-                article_begin: (current_page - 1) * article_num_per_page,
-                article_end: current_page * article_num_per_page
+                current_page: current_page,
+                article_num_per_page: article_num_per_page
             },
             function (response) {
                 if (response.result === "success") {
