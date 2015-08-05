@@ -130,7 +130,7 @@ app.post('/get_article', jsonParser, function(req, res) {
 
 
 // get port
-var port = config.port;
+var port = config.server.port;
 console.log("Server listening on port: " + port);
 
 // create server

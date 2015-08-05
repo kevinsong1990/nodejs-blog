@@ -5,9 +5,10 @@
  */
 
 var mongoose = require('mongoose');
+var config   = require('./../config.json');
 
 // connect to db - blog
-var dbConnectionString = 'mongodb://localhost/blog';
+var dbConnectionString = config.db.uri;
 mongoose.connect(dbConnectionString);
 
 // listen event: connected

@@ -1,3 +1,8 @@
 {
-    "port": 80
+    "server": {
+        "port": 80
+    },
+    "db": {
+        "uri": "mongodb://localhost/blog"
+    }
 }
