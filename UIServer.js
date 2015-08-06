@@ -117,7 +117,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
                     res.end();
                 });
             }
-        }).select(db.show_fields).skip((currentPage-1) * articleNumPerPage).limit(articleNumPerPage);
+        }).select(db.show_fields).sort({}).skip((currentPage-1) * articleNumPerPage).limit(articleNumPerPage);
     }
 });
 

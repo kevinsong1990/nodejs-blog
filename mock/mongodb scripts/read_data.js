@@ -8,7 +8,7 @@ var articleSchema = new Schema({
     "article_title"         : String,
     "article_title_pic"     : String,
     "article_author"        : String,
-    "article_time"          : String,
+    "article_time"          : Date,
     "article_read_number"   : Number,
     "article_comment_number": Number,
     "article_content"       : String

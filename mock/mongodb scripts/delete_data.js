@@ -37,11 +37,21 @@ mongoose.connection.on('disconnected', function() {
 var articleModel = mongoose.model('article', articleSchema);
 
 // remove data from db
-articleModel.findByIdAndRemove(1, function(err, data) {
+/*articleModel.findByIdAndRemove(1, function(err, data) {
     if (err) {
         console.log("Database Error: remove data from collection. Error: " + err);
     }
     else {
         console.log("Database: remove data success. Article title: " + data.article_title);
+    }
+});*/
+
+// remove all data
+articleModel.remove({}, function(err, data) {
+    if (err) {
+        console.log("Database Error: remove all data fail. Error: " + err);
+    }
+    else {
+        console.log("Database: remove all data success.");
     }
 });
