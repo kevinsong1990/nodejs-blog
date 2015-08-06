@@ -7,7 +7,7 @@
     },
     "log": {
         "filename": "debug.log",
-        "path": "/var/log/blog",
+        "path": "./logs/",
         "maxsize": 25165824,
 		"maxFiles": 20,
         "level": "debug"

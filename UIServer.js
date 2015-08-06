@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var config = require('./config.json');
 var db = require('./model/db.js');
-
+var log = require('./model/log.js');
 
 /*
  *  Project Name: Kevin's Personal Website
@@ -24,7 +24,7 @@ if (process.argv && process.argv[2]) {
     // production to be passed as param
     mode = process.argv[2];
 }
-console.log("mode: " + mode);
+log.info("mode: " + mode);
 
 
 // express app config here
@@ -69,7 +69,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
     var currentPage = req.body.current_page;
     var articleNumPerPage = req.body.article_num_per_page;
     
-    console.log("currentPage: " + currentPage + ", articleNumPerPage: " + articleNumPerPage);
+    log.info("currentPage: " + currentPage + ", articleNumPerPage: " + articleNumPerPage);
 
     //return the mock mock
     if (mode === "development") {
@@ -94,23 +94,23 @@ app.post('/get_article_list', jsonParser, function(req, res) {
         
         db.find({}, function(err, data) {
             if (err) {
-                console.log("Database Error: get data from collection. Error: " + err);
+                log.info("Database Error: get data from collection. Error: " + err);
                 failResponse.error = err;
                 res.write(JSON.stringify(failResponse));
                 res.end();
             }
             else {
-                console.log("Database: get data success. data.length: " + data.length);
+                log.info("Database: get data success. data.length: " + data.length);
 
                 // get the number of the all articles
                 db.count(function(err, count) {
                     if (err) {
-                        console.log("Database Error: count articles number. Error: " + err);
+                        log.info("Database Error: count articles number. Error: " + err);
                         failResponse.error = err;
                         res.write(JSON.stringify(failResponse));
                     }
                     else {
-                        console.log("articles total number: " + count);
+                        log.info("articles total number: " + count);
                     
                         successResponse.data = {};
                         successResponse.data.total_aritcle_num = count;
@@ -132,7 +132,7 @@ app.post('/get_article', jsonParser, function(req, res) {
     
     // get the article id
     var id = req.body._id;
-    //console.log("id: " + id);
+    //log.info("id: " + id);
     
     //return the mock mock
     if (mode === "development") {
@@ -150,12 +150,12 @@ app.post('/get_article', jsonParser, function(req, res) {
         // query data from mongodb
         db.findById(id, function(err, data) {
             if (err) {
-                console.log("Database Error: get data from collection. Error: " + err);
+                log.info("Database Error: get data from collection. Error: " + err);
                 failResponse.error = err;
                 res.write(JSON.stringify(failResponse));
             }
             else {
-                console.log("Database: get data success. Article title: " + data.article_title);
+                log.info("Database: get data success. Article title: " + data.article_title);
                 successResponse.data = data;
                 res.write(JSON.stringify(successResponse));
             }
@@ -167,7 +167,7 @@ app.post('/get_article', jsonParser, function(req, res) {
 
 // get port
 var port = config.server.port;
-console.log("Server listening on port: " + port);
+log.info("Server listening on port: " + port);
 
 // create server
 http.createServer(app).listen(port);

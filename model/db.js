@@ -6,6 +6,7 @@
 
 var mongoose = require('mongoose');
 var config   = require('./../config.json');
+var log      = require('./log.js');
 
 // connect to db - blog
 var dbConnectionString = config.db.uri;
@@ -13,24 +14,24 @@ mongoose.connect(dbConnectionString);
 
 // listen event: connected
 mongoose.connection.on('connected', function() {
-    console.log('Mongoose connected to ' + dbConnectionString);
+    log.info('Mongoose connected to ' + dbConnectionString);
 });
 
 // listen event: error
 mongoose.connection.on('error', function(err) {
-    console.log('Mongoose connection error: ' + err);
+    log.info('Mongoose connection error: ' + err);
 });
 
 // listen event: disconnected
 /*mongoose.connection.on('disconnected', function() {
-    console.log('Mongoose default connection disconnected');
+    log.info('Mongoose default connection disconnected');
 });*/
 
 // if the Node process ends, close the Mongoose connection 
 process.on('SIGINT', function() {
     // close the db connection
     mongoose.connection.close(function () { 
-        console.log('Mongoose connection closed'); 
+        log.info('Mongoose connection closed'); 
         process.exit(0); 
     });
 });
@@ -42,7 +43,7 @@ process.on('uncaughtException', function (err) {
     
     // close the db connection
     mongoose.connection.close(function () { 
-        console.log('Mongoose connection closed because of process uncaughtException'); 
+        log.info('Mongoose connection closed because of process uncaughtException'); 
         process.exit(1);
     });
 });
