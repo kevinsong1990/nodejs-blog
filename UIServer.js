@@ -86,7 +86,12 @@ app.post('/get_article_list', jsonParser, function(req, res) {
         }
     }
     else {
-        // query data from mongodb
+        /*  query data from mongodb
+         *  here we will use mongoose to get data from mongodb.
+         *  and sort api can let us sort the data in mongodb before search. We sort as the date.
+         *  and skip, limit api can let us achieve the range query when user query different page's data.
+         */
+        
         db.find({}, function(err, data) {
             if (err) {
                 console.log("Database Error: get data from collection. Error: " + err);
@@ -117,7 +122,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
                     res.end();
                 });
             }
-        }).select(db.show_fields).sort({}).skip((currentPage-1) * articleNumPerPage).limit(articleNumPerPage);
+        }).select(db.show_fields).sort({'article_time':'desc'}).skip((currentPage-1) * articleNumPerPage).limit(articleNumPerPage);
     }
 });
 
