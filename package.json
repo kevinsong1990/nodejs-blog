@@ -7,7 +7,8 @@
         "body-parser": "~1.13.2",
         "express": "~4.12.2",
         "mongoose": "~4.0.5",
-        "serve-favicon": "~2.3.0"
+        "serve-favicon": "~2.3.0",
+        "winston": "~1.0.1"
     },
     "description": "a blog template - using Angular JS + Express JS + Mongo DB",
     "main": "UIServer.js",
