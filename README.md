@@ -1,4 +1,5 @@
 # This is my blog project
+[![Dependency Status](https://david-dm.org/kevinsong1990/nodejs-blog.svg)](https://david-dm.org/kevinsong1990/nodejs-blog)
 I will develop this project as my new personal blog site. I will spend almost 2 months to complete it.
 
 # Angular JS + Express JS + Mongo DB
