@@ -16,6 +16,18 @@ In frontend, I used this beautiful template https://github.com/IronSummitMedia/s
 # Use 3rd party Comment Plugin
 I will use 3rd party comment plugin to reduce my work. The plugin I choose is DuoSuo - a famous chinese comment plugin.
 
+# How to start
+```
+cd nodejs-blog/
+
+// create logs folder
+mkdir logs
+
+// create node_modules folder, and install these dependency moduels
+mkdir node_modules
+npm install
+```
+
 # Contribute Code or Provide Feedback
 If you encounter any bugs with the library please file an issue in the Issues section of the project. Thanks very much.
 
