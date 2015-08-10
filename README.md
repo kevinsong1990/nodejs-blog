@@ -20,12 +20,15 @@ I will use 3rd party comment plugin to reduce my work. The plugin I choose is Du
 ```
 cd nodejs-blog/
 
-// create logs folder
-mkdir logs
-
 // create node_modules folder, and install these dependency moduels
 mkdir node_modules
 npm install
+
+// copy monit script to monit path
+cp monit/blog.monit /etc/monit.d/
+
+// change the execute  permission for monit, or the monit will throw 'not executable' error
+chmod +x bin/blog-start-stop
 ```
 
 # Contribute Code or Provide Feedback
