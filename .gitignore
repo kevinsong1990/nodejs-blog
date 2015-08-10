@@ -1,9 +1,7 @@
 # Logs
-logs
 *.log
 
 # Runtime data
-pids
 *.pid
 
 # Dependency directory

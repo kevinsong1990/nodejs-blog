@@ -1,0 +1,7 @@
+check process blog with pidfile /opt/node/nodejs-blog/pid/app.pid
+
+start program = "/opt/node/nodejs-blog/bin/blog-start-stop"
+
+stop program = "/opt/node/nodejs-blog/bin/blog-start-stop"
+
+if 5 restarts within 5 cycles then timeout
