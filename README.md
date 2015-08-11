@@ -16,6 +16,9 @@ In frontend, I used this beautiful template https://github.com/IronSummitMedia/s
 # Use 3rd party Comment Plugin
 I will use 3rd party comment plugin to reduce my work. The plugin I choose is DuoSuo - a famous chinese comment plugin.
 
+# Use Monit to monitoring this Node.js process
+You can find monit script at folder /monit.  And here is monit website https://mmonit.com/monit/ .
+
 # How to start
 ```
 cd nodejs-blog/
