@@ -1,30 +1,34 @@
 {
-    "name": "nodejs-blog",
-    "author": "Kevin Song",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "body-parser": "~1.13.2",
-        "express": "~4.12.2",
-        "mongoose": "~4.0.5",
-        "serve-favicon": "~2.3.0",
-        "winston": "~1.0.1"
-    },
-    "description": "a blog template - using Angular JS + Express JS + Mongo DB",
-    "main": "UIServer.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/kevinsong1990/nodejs-blog.git"
-    },
-    "keywords": [
-        "angularjs",
-        "expressjs",
-        "mongodb",
-        "nodejs"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/kevinsong1990/nodejs-blog/issues"
-    },
-    "homepage": "https://github.com/kevinsong1990/nodejs-blog"
+  "name": "nodejs-blog",
+  "author": "Kevin Song",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.13.3",
+    "express": "~4.12.4",
+    "mongoose": "~4.0.8",
+    "serve-favicon": "~2.3.0",
+    "winston": "~1.0.1"
+  },
+  "description": "a blog template - using Angular JS + Express JS + Mongo DB",
+  "main": "UIServer.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinsong1990/nodejs-blog.git"
+  },
+  "keywords": [
+    "angularjs",
+    "expressjs",
+    "mongodb",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinsong1990/nodejs-blog/issues"
+  },
+  "homepage": "https://github.com/kevinsong1990/nodejs-blog",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node UIServer.js"
+  }
 }
