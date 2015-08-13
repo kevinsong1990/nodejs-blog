@@ -53,6 +53,7 @@ var schema = mongoose.Schema;
 var article = {
     "_id"                   : Number,
     "article_title"         : String,
+    "article_sub_title"     : String,
     "article_title_pic"     : String,
     "article_author"        : String,
     "article_time"          : Date,
@@ -65,6 +66,7 @@ var article = {
 var show_fields = {
     "_id"                   : 1,
     "article_title"         : 1,
+    "article_sub_title"     : 1,
     "article_title_pic"     : 1,
     "article_author"        : 1,
     "article_time"          : 1,

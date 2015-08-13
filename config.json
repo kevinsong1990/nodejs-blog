@@ -7,7 +7,7 @@
     },
     "log": {
         "filename": "debug.log",
-        "path": "/opt/node/nodejs-blog/logs/",
+        "path": "./logs/",
         "maxsize": 25165824,
 		"maxFiles": 20,
         "level": "debug"
