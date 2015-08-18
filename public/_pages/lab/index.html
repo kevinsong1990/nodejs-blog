@@ -1,0 +1,141 @@
+<!-- Navigation -->
+<div menu></div>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/lab-bg.jpg')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="page-heading">
+					<h1>Lab</h1>
+					<!--<hr class="small">-->
+					<span class="subheading">这里是我业余做的小东西。</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="htmleaf-container">
+			<br>
+			<section class="container">
+				<div class="row active-with-click">
+					<!-- No.1 -->
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<article class="material-card Blue">
+							<h2>
+								<span>我的个人网站</span>
+								<strong>
+									<i class="fa fa-fw fa-star"></i>
+									7月13日 - 8月13日
+								</strong>
+							</h2>
+							<div class="mc-content">
+								<div class="img-container">
+									<img class="img-responsive" src="img/lab/nodejs-blog.jpg">
+								</div>
+								<div class="mc-description">
+									这是我的个人网站项目，架构为Angular JS + Express JS + Mongo DB，以及使用第三方插件等实现而成。
+								</div>
+							</div>
+							<a class="mc-btn-action">
+								<i class="fa fa-bars"></i>
+							</a>
+							<div class="mc-footer">
+								<h4>
+									源代码，点击下方GitHub。
+								</h4>
+								<a class="fa fa-fw fa-github" href="https://github.com/kevinsong1990/nodejs-blog" target="_blank" title="这是源代码，欢迎交流"></a>
+							</div>
+						</article>
+					</div>
+					<!-- No.2 -->
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<article class="material-card Indigo">
+							<h2>
+								<span>敬请期待</span>
+								<strong>
+									<i class="fa fa-fw fa-star"></i>
+									
+								</strong>
+							</h2>
+							<div class="mc-content">
+								<div class="img-container">
+									<img class="img-responsive" src="img/lab/coming-soon.jpg">
+								</div>
+								<div class="mc-description">
+										
+								</div>
+							</div>
+							<a class="mc-btn-action">
+								<i class="fa fa-bars"></i>
+							</a>
+							<div class="mc-footer">
+								<a class="fa fa-fw fa-github" href="https://github.com/kevinsong1990/" target="_blank" title="这是源代码，欢迎交流"></a>
+							</div>
+						</article>
+					</div>
+					<!-- No.3 -->
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<article class="material-card Deep-Purple">
+							<h2>
+								<span>敬请期待</span>
+								<strong>
+									<i class="fa fa-fw fa-star"></i>
+									
+								</strong>
+							</h2>
+							<div class="mc-content">
+								<div class="img-container">
+									<img class="img-responsive" src="img/lab/coming-soon.jpg">
+								</div>
+								<div class="mc-description">
+									
+								</div>
+							</div>
+							<a class="mc-btn-action">
+								<i class="fa fa-bars"></i>
+							</a>
+							<div class="mc-footer">
+								<a class="fa fa-fw fa-github" href="https://github.com/kevinsong1990/" target="_blank" title="这是源代码，欢迎交流"></a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<!-- Material Cards CSS -->
+<link href="css/material-cards.css" rel="stylesheet">
+<!-- Material Cards Javascript -->  
+<script src="lib/material-cards/jquery.material-cards.min.js"></script>
+<script>
+	$(function () {
+		$('.material-card').materialCard({
+			icon_close: 'fa-chevron-left',
+			icon_open: 'fa-thumbs-o-up',
+			icon_spin: 'fa-spin-fast',
+			card_activator: 'click'
+		});
+
+		//$('.active-with-click .material-card').materialCard();
+		window.setTimeout(function () {
+			$('.material-card:eq(0)').materialCard('open');
+		}, 2000);
+		
+		$('.material-card').on('shown.material-card show.material-card hide.material-card hidden.material-card', function (event) {
+			//console.log(event.type, event.namespace, $(this));
+		});
+	});
+</script>
+
+<hr>
+
+<!-- Footer -->
+<div footer></div>
