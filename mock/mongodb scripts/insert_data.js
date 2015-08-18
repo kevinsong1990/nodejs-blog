@@ -42,7 +42,7 @@ var articleEntity1 = new articleModel({
     "_id"                   : 1,
     "article_title"         : "在孤独中，一个人要像一支队伍",
     "article_sub_title"     : "我的第一篇随笔",
-    "article_title_pic"     : "img/article_1_title.jpg",
+    "article_title_pic"     : "img/article/article_1_title.jpg",
     "article_author"        : "Kevin Song",
     "article_time"          : "2015-08-12T22:23:45.913Z",
     "article_read_number"   : 0,

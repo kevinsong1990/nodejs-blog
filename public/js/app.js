@@ -23,6 +23,13 @@ myApp.config(['$routeProvider', '$locationProvider',
 			    }
 	    ).
         when(
+                '/lab',
+			    {
+				    templateUrl: '_pages/lab/index.html',
+				    controller: ''
+			    }
+	    ).
+        when(
                 '/about',
 			    {
 				    templateUrl: '_pages/about/index.html',
