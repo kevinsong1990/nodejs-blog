@@ -60,6 +60,12 @@ var failResponse = {
     "error": ""
 };
 
+// get IP
+app.use(function(req, res, next) {
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    log.info("New request, ip: " + ip);
+    next();
+});
 
 // API: get_article_list
 app.post('/get_article_list', jsonParser, function(req, res) {
