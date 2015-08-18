@@ -16,28 +16,28 @@ myApp.config(['$routeProvider', '$locationProvider',
 			    }
 	    ).
         when(
-                '/anotherblog.html',
+                '/anotherblog',
 			    {
 				    templateUrl: '_pages/anotherblog/index.html',
 				    controller: ''
 			    }
 	    ).
         when(
-                '/about.html',
+                '/about',
 			    {
 				    templateUrl: '_pages/about/index.html',
 				    controller: ''
 			    }
 	    ).
         when(
-                '/board.html',
+                '/board',
 			    {
 				    templateUrl: '_pages/board/index.html',
 				    controller: ''
 			    }
 	    ).
         when(
-                '/article.html/:id',
+                '/article/:id',
 			    {
 				    templateUrl: '_pages/article/index.html',
 				    controller: 'articleContrl'
