@@ -63,7 +63,7 @@ var failResponse = {
 // get IP
 app.use(function(req, res, next) {
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    log.info("New request, ip: " + ip);
+    log.info("New request, url: " + req.url + ", ip: " + ip);
     next();
 });
 
@@ -75,7 +75,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
     var currentPage = req.body.current_page;
     var articleNumPerPage = req.body.article_num_per_page;
     
-    log.info("currentPage: " + currentPage + ", articleNumPerPage: " + articleNumPerPage);
+    //log.info("currentPage: " + currentPage + ", articleNumPerPage: " + articleNumPerPage);
 
     //return the mock mock
     if (mode === "development") {
@@ -106,7 +106,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
                 res.end();
             }
             else {
-                log.info("Database: get data success. data.length: " + data.length);
+                //log.info("Database: get data success. data.length: " + data.length);
 
                 // get the number of the all articles
                 db.count(function(err, count) {
@@ -116,7 +116,7 @@ app.post('/get_article_list', jsonParser, function(req, res) {
                         res.write(JSON.stringify(failResponse));
                     }
                     else {
-                        log.info("articles total number: " + count);
+                        //log.info("articles total number: " + count);
                     
                         successResponse.data = {};
                         successResponse.data.total_aritcle_num = count;
@@ -161,7 +161,7 @@ app.post('/get_article', jsonParser, function(req, res) {
                 res.write(JSON.stringify(failResponse));
             }
             else {
-                log.info("Database: get data success. Article title: " + data.article_title);
+                log.info("Article title: " + data.article_title);
                 successResponse.data = data;
                 res.write(JSON.stringify(successResponse));
             }
