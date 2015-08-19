@@ -4,6 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+var compress = require('compression');
 var config = require('./config.json');
 var db = require('./model/db.js');
 var log = require('./model/log.js');
@@ -33,6 +34,9 @@ var app = module.exports = express();
 // express middle ware
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// use gzip to compress the response, to reduce file size
+app.use(compress());
 
 // create application/json parser, this will parse the json form data from the req
 var jsonParser = bodyParser.json();

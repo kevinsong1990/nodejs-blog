@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "~1.13.3",
+    "compression": "~1.5.2",
     "express": "~4.12.4",
     "mongoose": "~4.0.8",
     "serve-favicon": "~2.3.0",
