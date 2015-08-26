@@ -56,7 +56,7 @@ var articleEntity2 = new articleModel({
     "article_sub_title"     : "下一个项目",
     "article_title_pic"     : "img/article/article_2_title.jpg",
     "article_author"        : "Kevin Song",
-    "article_time"          : "2015-08-26T19:45:31.913Z",
+    "article_time"          : "2015-08-26T11:45:31.913Z",
     "article_read_number"   : 0,
     "article_comment_number": 0,
     "article_content": ""
