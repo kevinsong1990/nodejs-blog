@@ -62,18 +62,19 @@ var articleEntity2 = new articleModel({
     "article_content": ""
 });
 
-/*
 var articleEntity3 = new articleModel({
     "_id"                   : 3,
-    "article_title"         : "Hello — Caller ID & Blocking - Android Apps on Google Play",
-    "article_title_pic"     : "img/article_1_title.jpg",
+    "article_title"         : "凌晨四点半",
+	"article_sub_title"     : "最近一些感想",
+    "article_title_pic"     : "img/article/article_3_title.jpg",
     "article_author"        : "Kevin Song",
-    "article_time"          : "2015-05-12T15:19:25.913Z",
+    "article_time"          : "2015-09-02T10:08:25.913Z",
     "article_read_number"   : 0,
     "article_comment_number": 0,
     "article_content": ""
 });
 
+/*
 var articleEntity4 = new articleModel({
     "_id"                   : 4,
     "article_title"         : "HELLO! | Facebook",
@@ -122,12 +123,13 @@ var articleEntity7 = new articleModel({
 // read the article content for entity
 var articleContent1 = fs.readFileSync('../articles/article_1.html', 'utf-8');
 var articleContent2 = fs.readFileSync('../articles/article_2.html', 'utf-8');
+var articleContent3 = fs.readFileSync('../articles/article_3.html', 'utf-8');
 
 // set the content
 articleEntity1.article_content = articleContent1;
 articleEntity2.article_content = articleContent2;
-/*articleEntity3.article_content = articleContent;
-articleEntity4.article_content = articleContent;
+articleEntity3.article_content = articleContent3;
+/*articleEntity4.article_content = articleContent;
 articleEntity5.article_content = articleContent;
 articleEntity6.article_content = articleContent;
 articleEntity7.article_content = articleContent;*/
@@ -135,10 +137,9 @@ articleEntity7.article_content = articleContent;*/
 // set all data to array
 var articleArray = [
     articleEntity1,
-    articleEntity2
-    /*,
-    articleEntity3,
-    articleEntity4,
+    articleEntity2,
+    articleEntity3
+    /*articleEntity4,
     articleEntity5,
     articleEntity6,
     articleEntity7*/
