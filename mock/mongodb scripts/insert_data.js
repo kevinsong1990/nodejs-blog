@@ -74,18 +74,20 @@ var articleEntity3 = new articleModel({
     "article_content": ""
 });
 
-/*
+
 var articleEntity4 = new articleModel({
     "_id"                   : 4,
-    "article_title"         : "HELLO! | Facebook",
-    "article_title_pic"     : "img/article_1_title.jpg",
+    "article_title"         : "over the way",
+    "article_sub_title"     : "分享一首她喜欢的歌",
+    "article_title_pic"     : "img/article/article_4_title.jpg",
     "article_author"        : "Kevin Song",
-    "article_time"          : "2015-03-25T13:19:25.913Z",
+    "article_time"          : "2015-10-06T06:01:25.913Z",
     "article_read_number"   : 0,
     "article_comment_number": 0,
     "article_content": ""
 });
 
+/*
 var articleEntity5 = new articleModel({
     "_id"                   : 5,
     "article_title"         : "Best Language Learning apps for iPad",
@@ -124,13 +126,14 @@ var articleEntity7 = new articleModel({
 var articleContent1 = fs.readFileSync('../articles/article_1.html', 'utf-8');
 var articleContent2 = fs.readFileSync('../articles/article_2.html', 'utf-8');
 var articleContent3 = fs.readFileSync('../articles/article_3.html', 'utf-8');
+var articleContent4 = fs.readFileSync('../articles/article_4.html', 'utf-8');
 
 // set the content
 articleEntity1.article_content = articleContent1;
 articleEntity2.article_content = articleContent2;
 articleEntity3.article_content = articleContent3;
-/*articleEntity4.article_content = articleContent;
-articleEntity5.article_content = articleContent;
+articleEntity4.article_content = articleContent4;
+/*articleEntity5.article_content = articleContent;
 articleEntity6.article_content = articleContent;
 articleEntity7.article_content = articleContent;*/
 
@@ -138,9 +141,9 @@ articleEntity7.article_content = articleContent;*/
 var articleArray = [
     articleEntity1,
     articleEntity2,
-    articleEntity3
-    /*articleEntity4,
-    articleEntity5,
+    articleEntity3,
+    articleEntity4
+    /*articleEntity5,
     articleEntity6,
     articleEntity7*/
 ];
