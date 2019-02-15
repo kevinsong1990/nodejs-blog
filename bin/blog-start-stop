@@ -2,9 +2,9 @@
 NODE_EXEC='/usr/bin/node'
 NODE_ENV="production"
 NODE_APP='UIServer.js'
-APP_DIR='/opt/node/nodejs-blog'
+APP_DIR='/home/kevin/nodejs-blog'
 PID_FILE=$APP_DIR/pid/app.pid
-LOG_FILE=/opt/node/nodejs-blog/logs/blogstartup.log
+LOG_FILE=/home/kevin/nodejs-blog/logs/blogstartup.log
 CONFIG_DIR=$APP_DIR
 
 ###############
