@@ -9,7 +9,7 @@
         "filename": "debug.log",
         "path": {
             "windows": "./logs",
-            "linux": "/opt/node/nodejs-blog/logs"
+            "linux": "/home/kevin/nodejs-blog/logs"
         },
         "maxsize": 25165824,
 		"maxFiles": 20,
