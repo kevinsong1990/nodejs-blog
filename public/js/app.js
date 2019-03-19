@@ -11,8 +11,8 @@ myApp.config(['$routeProvider', '$locationProvider',
         when(
                 '/',
 			    {
-				    templateUrl: '_pages/about/index.html', // default use _pages/index/index.html
-				    controller: ''  // default use indexContrl, modify at 2019.2.16
+				    templateUrl: '_pages/index/index.html',
+				    controller: 'indexContrl'
 			    }
 	    ).
         when(
